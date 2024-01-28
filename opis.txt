@@ -1,0 +1,21 @@
+Schemat bazy danych przedstawia strukturę aplikacji służącej do monitorowania spożycia kalorii, aktywności fizycznej i interakcji między użytkownikami.
+
+Tabela "brands" przechowuje informacje o markach produktów spożywczych. Zawiera identyfikator marki, nazwę marki, URL do logo marki oraz stronę internetową marki.
+
+Tabela "products" zawiera dane o konkretnych produktach spożywczych, takie jak nazwa, identyfikator marki, kalorie, tłuszcz, węglowodany i białko. Produkt jest powiązany z daną marką za pomocą klucza obcego.
+
+Tabela "users" przechowuje informacje o użytkownikach aplikacji, takie jak nazwa użytkownika, data utworzenia konta, użytkownik polecający, wzrost i waga. To centralna tabela dotycząca użytkowników aplikacji do monitorowania kalorii.
+
+Tabela "accounts" zawiera dane dotyczące kont użytkowników, takie jak adres e-mail i hasło. Jest to tabela służąca do uwierzytelniania użytkowników.
+
+Tabela "followers" reprezentuje relacje obserwowania między użytkownikami. Każdy wpis w tej tabeli wskazuje, że użytkownik "follower" obserwuje użytkownika "followee".
+
+Tabela "custom_products" umożliwia użytkownikom dodawanie niestandardowych produktów spożywczych do bazy danych, z informacjami o nazwie, marce, właścicielu oraz wartościach kalorii, tłuszczu, węglowodanów i białka.
+
+Tabela "ingests" przechowuje informacje o spożytych produktach. Wpisy w tej tabeli zawierają ilość spożytych porcji, użytkownika, datę, informację czy produkt jest niestandardowy, oraz odwołania do produktów spożywczych lub niestandardowych produktów.
+
+Tabela "activities" opisuje różne aktywności fizyczne, takie jak nazwa i kategoria.
+
+Tabela "custom_activities" pozwala użytkownikom na dodawanie niestandardowych aktywności fizycznych do systemu, z informacjami o nazwie, kategorii i właścicielu.
+
+Tabela "burns" przechowuje informacje o spalonych kaloriach podczas aktywności. Zawiera informacje o ilości spalonych kalorii, użytkowniku, dacie, informacji czy aktywność jest niestandardowa, oraz odwołania do aktywności fizycznych lub niestandardowych aktywności.

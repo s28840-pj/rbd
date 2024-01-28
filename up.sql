@@ -28,6 +28,12 @@ create table users (
     weight smallint not null
 );
 
+create table accounts (
+    id int primary key references users,
+    email text not null unique,
+    password text not null
+);
+
 create table followers (
     -- the user following
     follower int not null references users,
@@ -51,7 +57,7 @@ create table ingests (
     id serial primary key,
     portions real not null,
     who int not null references users,
-    created_at date not null,
+    created_at date not null default current_date,
     is_custom boolean not null,
     product int references products,
     custom_product int references custom_products,
@@ -75,7 +81,7 @@ create table burns (
     id serial primary key,
     calories real not null,
     who int not null references users,
-    created_at date not null,
+    created_at date not null default current_date,
     is_custom boolean not null,
     activity int references activities,
     custom_activity int references custom_activities,
